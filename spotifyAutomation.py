@@ -1,9 +1,4 @@
-# # Automation application for running a spotify song, right now it chooses the first option on search bar
-# # Things to add: 
-#     # [] Toggle using up and down keys for selecting option (playSongSelect())
-#     # [] Play a user playlist
-#     # [] Play a song from a user's playlist
-
+# # Automation application for running a spotify or doing other commands
 import os
 import time
 import pyautogui
