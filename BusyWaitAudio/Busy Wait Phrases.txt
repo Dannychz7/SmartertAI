@@ -1,0 +1,41 @@
+<----- SOME COMMON BUSY WAIT PHRASES WHEN ASKED A QUESTION----->
+
+General Busy Wait Question | Status: [Complete]
+    "Let me think about that for a moment...",
+    "I'm processing your question...",
+    "Hmm, that's a good question. Let me consider that...",
+    "Just a second while I work on that...",
+    "I'm putting together your answer now...",
+    "Let me gather my thoughts on that...",
+    "I'm working on your response right now...",
+    "Just a moment while I find the information you need...",
+    "I'm thinking about how to best answer your question...",
+    "Bear with me briefly while I prepare your response..."
+
+<----- SOME COMMON BUSY WAIT PHRASES WHEN TOLD A COMMAND----->
+General / Neautral | Status: [Complete]
+    "Just a moment...",
+    "Please wait while we process your request.",
+    "Working on that...",
+    "Loading...",
+    "One moment, please.",
+    "We're getting that ready for you.",
+    "Almost there...",
+    "Preparing your request...",
+    "Fetching your music...",
+    "Launching the application...",
+    "Connecting to the service...",
+
+Friendly/Encouraging | Status: [Complete]
+    "This will just take a second.",
+    "We'll have that playing for you shortly.",
+    "Thanks for your patience.",
+    "Getting your music started!",
+    "Hang tight, your song is on its way!",
+    "Getting ready to play your music!",
+
+Short and Sweet | Status: [Complete]
+    "Loading...",
+    "Please wait.",
+    "Almost done.",
+

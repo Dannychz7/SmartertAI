@@ -19,7 +19,9 @@ Smarter Glass AI will one day provide real-time information and interactive feat
 Bugs to Fix: ***
 [] Listning threads do not let speech LLM talk, fix speech function in application or create another one taylored for llm speech reponse
 [] Quitting command takes time as all not all threads quit once user says exit
-[] Change AI voice, maybe using Murf API or eleven labs, find free solution
+[x] Change AI voice, maybe using Murf API or eleven labs, find free solution
+    - Done, implemented voice snippets from Murf API and used that as a basic voice command structure. Currently does not support
+        live text-to-speach, I have a solution ready but not yet implemented. Added voice snippets 
 [] Voice detection needs to be refined, small time between listening and switiching to another listening makes it so that some is
 audio is cut off or not properly working, maybe new mic or software if necessary
 
