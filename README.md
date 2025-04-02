@@ -24,6 +24,9 @@ Bugs to Fix: ***
         live text-to-speach, I have a solution ready but not yet implemented. Added voice snippets 
 [] Voice detection needs to be refined, small time between listening and switiching to another listening makes it so that some is
 audio is cut off or not properly working, maybe new mic or software if necessary
+[] Spotify voice commands needs work, but spotify has been fully integrated into the codebase with error checking and production
+level code. Logging is now in place. 
+    - SOLUTION: USING AN LLM TO PROCESS COMMANDS
 
 Features to Add: **
 [] Add refined error checking 
@@ -31,7 +34,16 @@ Features to Add: **
 [] Add camera for LLM image explaination
 [] Find local LLM for looking and processing images
 [] Do some other work in the meantime while LLM is thinking (Maybe talk about the news or something like that)
-[] begin splitting project into modular pieces, cannot have it all in one file
+[x] begin splitting project into modular pieces, cannot have it all in one file
+
+
+Features Implemented:
+    - Implemented Murf AI for voice generation
+    - Main.py holds the main execution of files
+    - spotify Automation allows for commands to be executed via keyboard shortcuts
+    - Murf AI clips used for busy wait audio
+    - Created modular design, so prject is now being split into different chunks (spotify automation, playBusyWaitAudio, etc..)
+    
 
 Priorites: 
 * - Low

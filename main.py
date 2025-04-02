@@ -10,10 +10,13 @@ import os
 import queue
 import pyautogui
 import pygame
+import logging
+import re
+
 
 # Custom Built Functions 
 from playBusyWaitAudio import play_busy_wait_audioMusic
-from spotifyAutomation import playSong
+from SpotifyProdCode import SpotifyController
 
 # # Initialize text-to-speech engine globally
 # engine = pyttsx3.init()
@@ -61,6 +64,102 @@ command_queue = queue.Queue()
 #         is_speaking = False
 #         stop_speaking = False
 
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+# Initialize Spotify controller
+spotify = SpotifyController()
+
+def process_spotify_command(command):
+    """
+    Process Spotify-related voice commands.
+    
+    Args:
+        command (str): The user's voice command as text
+    
+    Returns:
+        bool: True if a command was processed, False otherwise
+    """
+    
+    # Dictionary mapping command keywords to Spotify functions
+    command_mapping = {
+        # Playback controls
+        r"(pause|stop) (spotify|music)": 'play_pause',
+        r"(play|resume|start) (spotify|music)": 'play_pause',
+        r"(next|skip) (song|track|music)": 'next',
+        r"previous (song|track)": 'previous',
+        r"(shuffle|random)( mode)?( on| off)?": 'shuffle',
+        r"repeat( mode)?( on| off)?": 'repeat',
+        r"(volume|turn) up": 'volume_up',
+        r"(volume|turn) down": 'volume_down',
+        r"(forward|skip) (5 seconds|five seconds)": 'skip_5_seconds',
+        r"(back|rewind) (5 seconds|five seconds)": 'go_back_5_seconds',
+        
+        # Navigation
+        r"(go to |open |show )?(home|homepage)": 'home',
+        r"(go to |open |show )?(my )?(library|collection)": 'library',
+        r"(go to |open |show )?(my )?playlists": 'playlists',
+        r"(go to |open |show )?(my )?podcasts": 'podcasts',
+        r"(go to |open |show )?(my )?artists": 'artists',
+        r"(go to |open |show )?(my )?albums": 'albums',
+        r"(go to |open |show )?(my )?audiobooks": 'audiobooks',
+        r"(open |show )?search": 'search',
+        r"(go to |open |show )?now playing": 'now_playing',
+        r"(go to |open |show )?(my )?liked songs": 'liked_songs',
+        r"(go to |open |show )?made for you": 'made_for_you',
+        r"(go to |open |show )?new releases": 'new_releases',
+        r"(go to |open |show )?charts": 'charts',
+        r"(go to |open |show )?(my )?queue": 'queue',
+        
+        # Song management
+        r"like( this song| this track)?": 'like',
+        
+        # Window controls
+        r"(open |show )?settings": 'settings',
+        r"toggle now playing": 'toggle_now_playing',
+        r"toggle library": 'toggle_library',
+    }
+    
+    # Special case for playing specific songs
+    play_song_pattern = r"play (.*?)( on spotify)?$"
+    play_match = re.match(play_song_pattern, command.lower())
+    
+    if play_match:
+        song_name = play_match.group(1).strip()
+        logger.info(f"Playing song: {song_name}")
+        return spotify.execute_command('play', song_name)
+    
+    # Check for other commands
+    for pattern, action in command_mapping.items():
+        if re.search(pattern, command.lower()):
+            logger.info(f"Executing Spotify command: {action}")
+            return spotify.execute_command(action)
+    
+    # No matching command found
+    return False
+
+def process_command(command):
+    """
+    Process all voice commands, including Spotify and other functions.
+    
+    Args:
+        command (str): The user's voice command as text
+    """
+    try:
+        # Check if this is a Spotify-related command
+        if "spotify" in command.lower() or "music" in command.lower() or "play" in command.lower():
+            if process_spotify_command(command):
+                logger.info(f"Successfully processed Spotify command: {command}")
+            else:
+                logger.warning(f"Failed to process Spotify command: {command}")
+        else:
+            # Handle other types of commands here
+            logger.info(f"Not a Spotify command: {command}")
+            # Other command processing...
+            
+    except Exception as e:
+        logger.error(f"Error processing command '{command}': {e}")
+
 def spinning_cursor(stop_event):
     spinner = itertools.cycle(["|", "/", "-", "\\"])
     while not stop_event.is_set():
@@ -87,35 +186,34 @@ def chat_with_llm(text):
 
 def execute_command(command):
     global stop_speaking
+    process_command(command)
 
-    if "open browser" in command:
-        print("Opening browser")
-        # speak("Opening browser")  # Replaced with print
-        webbrowser.open("https://www.google.com")
+    # if "open browser" in command:
+    #     print("Opening browser")
+    #     # speak("Opening browser")  # Replaced with print
+    #     webbrowser.open("https://www.google.com")
 
-    elif "open terminal" in command:
-        print("Opening terminal")
-        # speak("Opening terminal")  # Replaced with print
-        os.system("open -a Terminal")
+    # elif "open terminal" in command:
+    #     print("Opening terminal")
+    #     # speak("Opening terminal")  # Replaced with print
+    #     os.system("open -a Terminal")
 
-    elif "open finder" in command:
-        print("Opening Finder")
-        # speak("Opening Finder")  # Replaced with print
-        os.system("open /System/Library/CoreServices/Finder.app")
+    # elif "open finder" in command:
+    #     print("Opening Finder")
+    #     # speak("Opening Finder")  # Replaced with print
+    #     os.system("open /System/Library/CoreServices/Finder.app")
 
-    elif "what is" in command or "tell me about" in command:
-        chat_with_llm(command)
+    # elif "what is" in command or "tell me about" in command:
+    #     chat_with_llm(command)
         
-    elif "play" in command and "spotify" in command:
-        song_name = command.replace("play", "").replace("on spotify", "").strip()
-        play_busy_wait_audioMusic()
-        playSong(song_name)
+    # elif "spotify" in command:
+    #     process_command(command)
 
-    elif "stop" in command:
-        print("Stopping audio")
-        stop_speaking = True  # Still used to stop busy wait audio
+    # elif "stop" in command:
+    #     print("Stopping audio")
+    #     stop_speaking = True  # Still used to stop busy wait audio
 
-    elif "exit" in command or "quit" in command:
+    if "exit" in command or "quit" in command:
         print("Exiting program")
         # speak("Goodbye!")  # Replaced with print
         # time.sleep(1)  # Removed since no speech to wait for
@@ -164,6 +262,7 @@ def main():
     
     print("Assistant ready! Say 'what is [topic]' to ask a question.")
     # speak("Assistant ready! Say 'what is' followed by a topic to ask a question.")  # Replaced with print
+    
     
     try:
         while True:
