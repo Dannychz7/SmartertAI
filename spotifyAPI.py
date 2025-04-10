@@ -2,6 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import time
 from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
+from fuzzywuzzy import fuzz
 
 # Replace with your Spotify developer credentials
 SPOTIPY_REDIRECT_URI = 'http://127.0.0.1:8888/callback'
@@ -157,6 +158,31 @@ def play_artist(artist_id):
     else:
         print(f"No tracks found for artist: {artist_id}")
 
+def search_song(query):
+    results = sp.search(q=query, type='track', limit=10)  # Fetch multiple results
+    
+    if results['tracks']['items']:
+        best_match = None
+        highest_score = 0
+
+        for track in results['tracks']['items']:
+            song_name = track['name']
+            print(song_name)
+            score = fuzz.ratio(query.lower(), song_name.lower())  # Compare query with track name
+            
+            if score > highest_score:
+                highest_score = score
+                best_match = track
+        
+        if best_match:
+            print(f"Best match: {best_match['name']} by {best_match['artists'][0]['name']}")
+            return best_match['uri']  # Return the URI to play the track
+        else:
+            print("No suitable match found.")
+            return None
+    else:
+        print("No tracks found.")
+        return None
 
 # --- Example usage ---
 if __name__ == '__main__':
@@ -165,21 +191,23 @@ if __name__ == '__main__':
     check_devices()
 
     # Search for a track
-    print("Searching for 'Die for you'...")
-    result = sp.search(q='Die For you', type='track', limit=1)
+    print("Searching for 'Up Next 2'...")
+    songUri = search_song("die for you")
+    print(f"This is up next 2 by my func: {songUri}")
+    # result = sp.search(q=songUri, type='track', limit=1)
 
-    if result['tracks']['items']:
-        print("Track found!")
-        track_uri = result['tracks']['items'][0]['uri']
-        print(f"Track URI: {track_uri}")
-    else:
-        print("No track found. Exiting.")
-        exit()
+    # if result['tracks']['items']:
+    #     print("Track found!")
+    #     track_uri = result['tracks']['items'][0]['uri']
+    #     print(f"Track URI: {track_uri}")
+    # else:
+    #     print("No track found. Exiting.")
+    #     exit()
 
     # Start playback
     print("Starting playback...")
-    sp.start_playback(uris=[track_uri])
-    time.sleep(2)
+    sp.start_playback(uris=[songUri])
+    time.sleep(10)
 
     # # Playback Controls
     # print("Playing/Pausing track...")
