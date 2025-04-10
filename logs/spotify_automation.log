@@ -1,0 +1,254 @@
+2025-04-09 18:24:14,946 - INFO - [spotifyProdCode.py:72] - >>> main() started
+2025-04-09 18:24:14,946 - INFO - [spotifyProdCode.py:107] - Starting Spotify automation
+2025-04-09 18:24:14,949 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:24:14,949 - INFO - [spotifyController.py:132] - System compatibility check passed: macOS 13.3.1
+2025-04-09 18:24:14,949 - INFO - [spotifyController.py:146] - SpotifyController initialized successfully
+2025-04-09 18:24:14,949 - INFO - [spotifyProdCode.py:126] - Running default test routine
+2025-04-09 18:24:14,949 - INFO - [spotifyProdCode.py:129] - Testing play command with specific song
+2025-04-09 18:24:14,989 - INFO - [spotifyController.py:59] - Attempting to play song: Die for you
+2025-04-09 18:24:15,005 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:24:15,048 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=1151, y=907)
+2025-04-09 18:24:15,067 - INFO - [spotifyController.py:78] - Spotify is not running, launching it...
+2025-04-09 18:24:15,077 - INFO - [spotifyHelperFuncs.py:213] - Launching Spotify...
+2025-04-09 18:24:15,208 - INFO - [spotifyHelperFuncs.py:220] - Spotify launched successfully, waiting 5s for initialization
+2025-04-09 18:24:21,492 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:24:24,366 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:24:24,868 - INFO - [spotifyController.py:95] - Searching for song: Die for you
+2025-04-09 18:24:30,243 - INFO - [spotifyController.py:107] - Search executed for: Die for you
+2025-04-09 18:24:30,244 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:24:30,245 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:38:40,963 - INFO - [spotifyProdCode.py:72] - >>> main() <<< started
+2025-04-09 18:38:40,964 - INFO - [spotifyProdCode.py:99] - Running comprehensive test suite
+2025-04-09 18:38:40,965 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:38:40,965 - INFO - [spotifyController.py:132] - System compatibility check passed: macOS 13.3.1
+2025-04-09 18:38:40,965 - INFO - [spotifyController.py:146] - SpotifyController initialized successfully
+2025-04-09 18:38:40,965 - INFO - [spotifyTestProg.py:43] - 
+========= SYSTEM TESTS =========
+2025-04-09 18:38:40,965 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:38:40,965 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: System compatibility check
+2025-04-09 18:38:40,965 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:38:40,980 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=1143, y=841)
+2025-04-09 18:38:40,980 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: PyAutoGUI functionality
+2025-04-09 18:38:41,017 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Network connectivity
+2025-04-09 18:38:41,017 - INFO - [spotifyTestProg.py:67] - 
+========= SPOTIFY PROCESS TESTS =========
+2025-04-09 18:38:41,033 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify process detection
+2025-04-09 18:38:41,052 - INFO - [spotifyHelperFuncs.py:213] - Launching Spotify...
+2025-04-09 18:38:41,132 - INFO - [spotifyHelperFuncs.py:220] - Spotify launched successfully, waiting 5s for initialization
+2025-04-09 18:38:46,134 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify launch
+2025-04-09 18:38:47,365 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify window activation
+2025-04-09 18:38:47,366 - INFO - [spotifyTestProg.py:95] - 
+========= INPUT VALIDATION TESTS =========
+2025-04-09 18:38:47,366 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #1
+2025-04-09 18:38:47,366 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #2
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #3
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #4
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #5
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #6
+2025-04-09 18:38:47,367 - ERROR - [spotifyTestProg.py:36] - ✗ TEST FAILED: Invalid song rejection #7 - Input: str
+2025-04-09 18:38:47,367 - ERROR - [spotifyController.py:244] - Command 'None' not recognized
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #1
+2025-04-09 18:38:47,367 - ERROR - [spotifyController.py:244] - Command '' not recognized
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #2
+2025-04-09 18:38:47,367 - ERROR - [spotifyController.py:244] - Command 'nonexistent_command' not recognized
+2025-04-09 18:38:47,367 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #3
+2025-04-09 18:38:47,368 - ERROR - [spotifyController.py:244] - Command '123' not recognized
+2025-04-09 18:38:47,368 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #4
+2025-04-09 18:38:47,368 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #5
+2025-04-09 18:38:47,368 - ERROR - [spotifyController.py:244] - Command '<script>alert(1)</script>' not recognized
+2025-04-09 18:38:47,368 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #6
+2025-04-09 18:38:47,368 - INFO - [spotifyTestProg.py:141] - 
+========= COMMAND EXECUTION TESTS =========
+2025-04-09 18:38:48,581 - INFO - [spotifyController.py:301] - Executing command: home
+2025-04-09 18:38:51,297 - INFO - [spotifyController.py:305] - Command executed: home
+2025-04-09 18:38:51,298 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: home
+2025-04-09 18:38:53,517 - INFO - [spotifyController.py:301] - Executing command: library
+2025-04-09 18:38:56,187 - INFO - [spotifyController.py:305] - Command executed: library
+2025-04-09 18:38:56,188 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: library
+2025-04-09 18:38:58,400 - INFO - [spotifyController.py:301] - Executing command: settings
+2025-04-09 18:39:01,048 - INFO - [spotifyController.py:305] - Command executed: settings
+2025-04-09 18:39:01,050 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: settings
+2025-04-09 18:39:02,052 - INFO - [spotifyTestProg.py:160] - 
+========= SONG PLAYBACK STRESS TESTS =========
+2025-04-09 18:39:02,075 - INFO - [spotifyController.py:59] - Attempting to play song: Bohemian Rhapsody
+2025-04-09 18:39:02,093 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:39:02,094 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=1143, y=839)
+2025-04-09 18:39:03,296 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:39:06,110 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:39:06,612 - INFO - [spotifyController.py:95] - Searching for song: Bohemian Rhapsody
+2025-04-09 18:39:12,761 - INFO - [spotifyController.py:107] - Search executed for: Bohemian Rhapsody
+2025-04-09 18:39:12,762 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:39:12,762 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:39:12,763 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Valid song play: 'Bohemian Rhapsody'
+2025-04-09 18:39:18,984 - INFO - [spotifyController.py:301] - Executing command: play_pause
+2025-04-09 18:39:20,782 - INFO - [spotifyProdCode.py:218] - Spotify automation interrupted by user
+2025-04-09 18:39:50,294 - INFO - [spotifyProdCode.py:72] - >>> main() <<< started
+2025-04-09 18:39:50,294 - INFO - [spotifyProdCode.py:99] - Running comprehensive test suite
+2025-04-09 18:39:50,296 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:39:50,296 - INFO - [spotifyController.py:132] - System compatibility check passed: macOS 13.3.1
+2025-04-09 18:39:50,296 - INFO - [spotifyController.py:146] - SpotifyController initialized successfully
+2025-04-09 18:39:50,296 - INFO - [spotifyTestProg.py:43] - 
+========= SYSTEM TESTS =========
+2025-04-09 18:39:50,296 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:39:50,296 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: System compatibility check
+2025-04-09 18:39:50,296 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:39:50,307 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=1033, y=363)
+2025-04-09 18:39:50,307 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: PyAutoGUI functionality
+2025-04-09 18:39:50,334 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Network connectivity
+2025-04-09 18:39:50,334 - INFO - [spotifyTestProg.py:67] - 
+========= SPOTIFY PROCESS TESTS =========
+2025-04-09 18:39:50,346 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify process detection
+2025-04-09 18:39:50,356 - WARNING - [spotifyTestProg.py:39] - ⚠ TEST SKIPPED: Spotify launch - Spotify already running
+2025-04-09 18:39:51,527 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify window activation
+2025-04-09 18:39:51,528 - INFO - [spotifyTestProg.py:95] - 
+========= INPUT VALIDATION TESTS =========
+2025-04-09 18:39:51,529 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #1
+2025-04-09 18:39:51,529 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #2
+2025-04-09 18:39:51,529 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #3
+2025-04-09 18:39:51,529 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #4
+2025-04-09 18:39:51,529 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #5
+2025-04-09 18:39:51,530 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #6
+2025-04-09 18:39:51,530 - ERROR - [spotifyTestProg.py:36] - ✗ TEST FAILED: Invalid song rejection #7 - Input: str
+2025-04-09 18:39:51,530 - ERROR - [spotifyController.py:244] - Command 'None' not recognized
+2025-04-09 18:39:51,530 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #1
+2025-04-09 18:39:51,531 - ERROR - [spotifyController.py:244] - Command '' not recognized
+2025-04-09 18:39:51,531 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #2
+2025-04-09 18:39:51,531 - ERROR - [spotifyController.py:244] - Command 'nonexistent_command' not recognized
+2025-04-09 18:39:51,531 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #3
+2025-04-09 18:39:51,531 - ERROR - [spotifyController.py:244] - Command '123' not recognized
+2025-04-09 18:39:51,531 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #4
+2025-04-09 18:39:51,532 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #5
+2025-04-09 18:39:51,532 - ERROR - [spotifyController.py:244] - Command '<script>alert(1)</script>' not recognized
+2025-04-09 18:39:51,532 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #6
+2025-04-09 18:39:51,532 - INFO - [spotifyTestProg.py:141] - 
+========= COMMAND EXECUTION TESTS =========
+2025-04-09 18:39:52,754 - INFO - [spotifyController.py:301] - Executing command: home
+2025-04-09 18:39:55,490 - INFO - [spotifyController.py:305] - Command executed: home
+2025-04-09 18:39:55,491 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: home
+2025-04-09 18:39:56,060 - INFO - [spotifyProdCode.py:218] - Spotify automation interrupted by user
+2025-04-09 18:40:19,054 - INFO - [spotifyProdCode.py:72] - >>> main() <<< started
+2025-04-09 18:40:19,055 - INFO - [spotifyProdCode.py:99] - Running comprehensive test suite
+2025-04-09 18:40:19,056 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:40:19,056 - INFO - [spotifyController.py:132] - System compatibility check passed: macOS 13.3.1
+2025-04-09 18:40:19,056 - INFO - [spotifyController.py:146] - SpotifyController initialized successfully
+2025-04-09 18:40:19,056 - INFO - [spotifyTestProg.py:43] - 
+========= SYSTEM TESTS =========
+2025-04-09 18:40:19,056 - INFO - [spotifyHelperFuncs.py:108] - Running on macOS version 13.3.1
+2025-04-09 18:40:19,056 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: System compatibility check
+2025-04-09 18:40:19,056 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:40:19,065 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=951, y=402)
+2025-04-09 18:40:19,065 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: PyAutoGUI functionality
+2025-04-09 18:40:19,086 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Network connectivity
+2025-04-09 18:40:19,086 - INFO - [spotifyTestProg.py:67] - 
+========= SPOTIFY PROCESS TESTS =========
+2025-04-09 18:40:19,097 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify process detection
+2025-04-09 18:40:19,116 - INFO - [spotifyHelperFuncs.py:213] - Launching Spotify...
+2025-04-09 18:40:19,195 - INFO - [spotifyHelperFuncs.py:220] - Spotify launched successfully, waiting 5s for initialization
+2025-04-09 18:40:24,197 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify launch
+2025-04-09 18:40:25,430 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Spotify window activation
+2025-04-09 18:40:25,432 - INFO - [spotifyTestProg.py:95] - 
+========= INPUT VALIDATION TESTS =========
+2025-04-09 18:40:25,432 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #1
+2025-04-09 18:40:25,432 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #2
+2025-04-09 18:40:25,433 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #3
+2025-04-09 18:40:25,433 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #4
+2025-04-09 18:40:25,433 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #5
+2025-04-09 18:40:25,433 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid song rejection #6
+2025-04-09 18:40:25,433 - ERROR - [spotifyTestProg.py:36] - ✗ TEST FAILED: Invalid song rejection #7 - Input: str
+2025-04-09 18:40:25,434 - ERROR - [spotifyController.py:244] - Command 'None' not recognized
+2025-04-09 18:40:25,434 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #1
+2025-04-09 18:40:25,434 - ERROR - [spotifyController.py:244] - Command '' not recognized
+2025-04-09 18:40:25,434 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #2
+2025-04-09 18:40:25,434 - ERROR - [spotifyController.py:244] - Command 'nonexistent_command' not recognized
+2025-04-09 18:40:25,435 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #3
+2025-04-09 18:40:25,435 - ERROR - [spotifyController.py:244] - Command '123' not recognized
+2025-04-09 18:40:25,435 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #4
+2025-04-09 18:40:25,435 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #5
+2025-04-09 18:40:25,435 - ERROR - [spotifyController.py:244] - Command '<script>alert(1)</script>' not recognized
+2025-04-09 18:40:25,436 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Invalid command rejection #6
+2025-04-09 18:40:25,436 - INFO - [spotifyTestProg.py:141] - 
+========= COMMAND EXECUTION TESTS =========
+2025-04-09 18:40:26,656 - INFO - [spotifyController.py:301] - Executing command: home
+2025-04-09 18:40:29,391 - INFO - [spotifyController.py:305] - Command executed: home
+2025-04-09 18:40:29,392 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: home
+2025-04-09 18:40:31,624 - INFO - [spotifyController.py:301] - Executing command: library
+2025-04-09 18:40:34,297 - INFO - [spotifyController.py:305] - Command executed: library
+2025-04-09 18:40:34,299 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: library
+2025-04-09 18:40:36,530 - INFO - [spotifyController.py:301] - Executing command: settings
+2025-04-09 18:40:39,179 - INFO - [spotifyController.py:305] - Command executed: settings
+2025-04-09 18:40:39,179 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Basic command: settings
+2025-04-09 18:40:40,181 - INFO - [spotifyTestProg.py:160] - 
+========= SONG PLAYBACK STRESS TESTS =========
+2025-04-09 18:40:40,202 - INFO - [spotifyController.py:59] - Attempting to play song: Bohemian Rhapsody
+2025-04-09 18:40:40,227 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:40:40,227 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=951, y=402)
+2025-04-09 18:40:41,427 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:40:44,244 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:40:44,746 - INFO - [spotifyController.py:95] - Searching for song: Bohemian Rhapsody
+2025-04-09 18:40:50,889 - INFO - [spotifyController.py:107] - Search executed for: Bohemian Rhapsody
+2025-04-09 18:40:50,890 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:40:50,890 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:40:50,890 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Valid song play: 'Bohemian Rhapsody'
+2025-04-09 18:40:57,122 - INFO - [spotifyController.py:301] - Executing command: play_pause
+2025-04-09 18:40:59,747 - INFO - [spotifyController.py:305] - Command executed: play_pause
+2025-04-09 18:40:59,748 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Play/pause after 'Bohemian Rhapsody'
+2025-04-09 18:41:00,769 - INFO - [spotifyController.py:59] - Attempting to play song: Die for you
+2025-04-09 18:41:00,785 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:41:00,786 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=951, y=402)
+2025-04-09 18:41:01,986 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:41:04,804 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:41:05,305 - INFO - [spotifyController.py:95] - Searching for song: Die for you
+2025-04-09 18:41:10,684 - INFO - [spotifyController.py:107] - Search executed for: Die for you
+2025-04-09 18:41:10,685 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:41:10,685 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:41:10,685 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Valid song play: 'Die for you'
+2025-04-09 18:41:16,916 - INFO - [spotifyController.py:301] - Executing command: play_pause
+2025-04-09 18:41:19,543 - INFO - [spotifyController.py:305] - Command executed: play_pause
+2025-04-09 18:41:19,544 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Play/pause after 'Die for you'
+2025-04-09 18:41:20,566 - INFO - [spotifyController.py:59] - Attempting to play song: Stairway to Heaven
+2025-04-09 18:41:20,583 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:41:20,584 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=951, y=402)
+2025-04-09 18:41:21,789 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:41:24,606 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:41:25,108 - INFO - [spotifyController.py:95] - Searching for song: Stairway to Heaven
+2025-04-09 18:41:31,387 - INFO - [spotifyController.py:107] - Search executed for: Stairway to Heaven
+2025-04-09 18:41:31,388 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:41:31,389 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:41:31,389 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Valid song play: 'Stairway to Heaven'
+2025-04-09 18:41:37,637 - INFO - [spotifyController.py:301] - Executing command: play_pause
+2025-04-09 18:41:40,269 - INFO - [spotifyController.py:305] - Command executed: play_pause
+2025-04-09 18:41:40,270 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Play/pause after 'Stairway to Heaven'
+2025-04-09 18:41:41,323 - INFO - [spotifyController.py:59] - Attempting to play song: Shape of You Ed Sheeran
+2025-04-09 18:41:41,349 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:41:41,350 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=951, y=402)
+2025-04-09 18:41:42,555 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:41:45,374 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:41:45,876 - INFO - [spotifyController.py:95] - Searching for song: Shape of You Ed Sheeran
+2025-04-09 18:41:52,837 - INFO - [spotifyController.py:107] - Search executed for: Shape of You Ed Sheeran
+2025-04-09 18:41:52,838 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:41:52,838 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:41:52,838 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Valid song play: 'Shape of You Ed Sheeran'
+2025-04-09 18:41:59,097 - INFO - [spotifyController.py:301] - Executing command: play_pause
+2025-04-09 18:42:01,724 - INFO - [spotifyController.py:305] - Command executed: play_pause
+2025-04-09 18:42:01,725 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Play/pause after 'Shape of You Ed Sheeran'
+2025-04-09 18:42:02,741 - INFO - [spotifyController.py:59] - Attempting to play song: AC/DC Highway to Hell
+2025-04-09 18:42:02,758 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:42:02,759 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=485, y=658)
+2025-04-09 18:42:03,965 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:42:06,781 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:42:07,283 - INFO - [spotifyController.py:95] - Searching for song: AC/DC Highway to Hell
+2025-04-09 18:42:14,009 - INFO - [spotifyController.py:107] - Search executed for: AC/DC Highway to Hell
+2025-04-09 18:42:14,010 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:42:14,011 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:42:14,011 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Special chars song: 'AC/DC Highway to Hell'
+2025-04-09 18:42:17,034 - INFO - [spotifyController.py:59] - Attempting to play song: Pink Floyd - Another Brick in the Wall
+2025-04-09 18:42:17,048 - DEBUG - [spotifyHelperFuncs.py:151] - Screen size detected: Size(width=1470, height=956)
+2025-04-09 18:42:17,049 - DEBUG - [spotifyHelperFuncs.py:155] - Mouse position: Point(x=485, y=658)
+2025-04-09 18:42:18,253 - DEBUG - [spotifyController.py:86] - Search command executed
+2025-04-09 18:42:21,072 - DEBUG - [spotifyController.py:91] - Command k executed
+2025-04-09 18:42:21,574 - INFO - [spotifyController.py:95] - Searching for song: Pink Floyd - Another Brick in the Wall
+2025-04-09 18:42:30,369 - INFO - [spotifyController.py:107] - Search executed for: Pink Floyd - Another Brick in the Wall
+2025-04-09 18:42:30,370 - INFO - [spotifyController.py:108] - Song search completed
+2025-04-09 18:42:30,371 - DEBUG - [spotifyController.py:109] - Song search completed
+2025-04-09 18:42:30,371 - INFO - [spotifyTestProg.py:33] - ✓ TEST PASSED: Special chars song: 'Pink Floyd - Another Brick in the Wall'
+2025-04-09 18:42:30,893 - INFO - [spotifyProdCode.py:218] - Spotify automation interrupted by user
