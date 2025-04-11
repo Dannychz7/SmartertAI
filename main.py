@@ -16,7 +16,27 @@ import re
 
 # Custom Built Functions 
 from playBusyWaitAudio import play_busy_wait_audioMusic
-from SpotifyProdCode import SpotifyController
+from spotify_utils import (
+    check_devices,
+    get_playlists,
+    get_artists,
+    search_song,
+    start_playback,
+    play_pause,
+    next_track,
+    previous_track,
+    toggle_shuffle,
+    toggle_repeat,
+    volume_up,
+    volume_down,
+    skip_5_seconds,
+    go_back_5_seconds,
+    play_playlist,
+    play_artist,
+    play_song,
+    get_current_track,
+)
+
 
 # # Initialize text-to-speech engine globally
 # engine = pyttsx3.init()
@@ -67,76 +87,45 @@ command_queue = queue.Queue()
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-# Initialize Spotify controller
-spotify = SpotifyController()
 
 def process_spotify_command(command):
-    """
-    Process Spotify-related voice commands.
-    
-    Args:
-        command (str): The user's voice command as text
-    
-    Returns:
-        bool: True if a command was processed, False otherwise
-    """
-    
-    # Dictionary mapping command keywords to Spotify functions
-    command_mapping = {
-        # Playback controls
-        r"(pause|stop) (spotify|music)": 'play_pause',
-        r"(play|resume|start) (spotify|music)": 'play_pause',
-        r"(next|skip) (song|track|music)": 'next',
-        r"previous (song|track)": 'previous',
-        r"(shuffle|random)( mode)?( on| off)?": 'shuffle',
-        r"repeat( mode)?( on| off)?": 'repeat',
-        r"(volume|turn) up": 'volume_up',
-        r"(volume|turn) down": 'volume_down',
-        r"(forward|skip) (5 seconds|five seconds)": 'skip_5_seconds',
-        r"(back|rewind) (5 seconds|five seconds)": 'go_back_5_seconds',
-        
-        # Navigation
-        r"(go to |open |show )?(home|homepage)": 'home',
-        r"(go to |open |show )?(my )?(library|collection)": 'library',
-        r"(go to |open |show )?(my )?playlists": 'playlists',
-        r"(go to |open |show )?(my )?podcasts": 'podcasts',
-        r"(go to |open |show )?(my )?artists": 'artists',
-        r"(go to |open |show )?(my )?albums": 'albums',
-        r"(go to |open |show )?(my )?audiobooks": 'audiobooks',
-        r"(open |show )?search": 'search',
-        r"(go to |open |show )?now playing": 'now_playing',
-        r"(go to |open |show )?(my )?liked songs": 'liked_songs',
-        r"(go to |open |show )?made for you": 'made_for_you',
-        r"(go to |open |show )?new releases": 'new_releases',
-        r"(go to |open |show )?charts": 'charts',
-        r"(go to |open |show )?(my )?queue": 'queue',
-        
-        # Song management
-        r"like( this song| this track)?": 'like',
-        
-        # Window controls
-        r"(open |show )?settings": 'settings',
-        r"toggle now playing": 'toggle_now_playing',
-        r"toggle library": 'toggle_library',
-    }
-    
-    # Special case for playing specific songs
-    play_song_pattern = r"play (.*?)( on spotify)?$"
-    play_match = re.match(play_song_pattern, command.lower())
-    
-    if play_match:
-        song_name = play_match.group(1).strip()
-        logger.info(f"Playing song: {song_name}")
-        return spotify.execute_command('play', song_name)
-    
-    # Check for other commands
-    for pattern, action in command_mapping.items():
-        if re.search(pattern, command.lower()):
-            logger.info(f"Executing Spotify command: {action}")
-            return spotify.execute_command(action)
-    
-    # No matching command found
-    return False
+    command = command.lower().strip()
+
+    if command.startswith("play "):  # Matches "play" followed by a song name
+        song_name = command[5:].strip()  # Everything after "play"
+        if song_name:
+            print(f"Playing song: {song_name}")
+            play_song(song_name)
+        else:
+            print("Please specify a song to play.")
+        return True
+
+    elif command == "resume":
+        play_pause()
+    elif command == "pause":
+        play_pause()
+    elif command == "next":
+        next_track()
+    elif command == "previous" or command == "back":
+        previous_track()
+    elif command == "shuffle":
+        toggle_shuffle()
+    elif command == "repeat":
+        toggle_repeat()
+    elif command == "volume up":
+        volume_up()
+    elif command == "volume down":
+        volume_down()
+    elif command == "skip":
+        skip_5_seconds()
+    elif command == "rewind":
+        go_back_5_seconds()
+    else:
+        print(f"Unrecognized command: '{command}'")
+        return False
+
+    return True
+
 
 def process_command(command):
     """

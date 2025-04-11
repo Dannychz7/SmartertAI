@@ -837,7 +837,5 @@ def get_current_track():
         print(f"Error getting current track: {e}")
         return False, None
 
-pre_check_spotify_environment()
-
 if __name__ == "__main__":
     pre_check_spotify_environment()

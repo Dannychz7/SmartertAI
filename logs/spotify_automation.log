@@ -1194,3 +1194,81 @@
 2025-04-11 14:54:32,057 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
 2025-04-11 14:54:32,071 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
 2025-04-11 14:54:32,104 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=907, y=651)
+2025-04-11 15:00:31,064 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:00:31,064 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:00:31,066 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-11 15:00:31,090 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-11 15:00:31,109 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1076, y=625)
+2025-04-11 15:00:54,011 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:00:54,012 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:00:54,013 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-11 15:00:54,033 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-11 15:00:54,043 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=958, y=409)
+2025-04-11 15:00:54,062 - INFO - [spotifyHelperFuncs.py:263] - Launching Spotify...
+2025-04-11 15:00:54,143 - INFO - [spotifyHelperFuncs.py:270] - Spotify launched successfully, waiting 5s for initialization
+2025-04-11 15:06:55,576 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:06:55,576 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:07:01,063 - INFO - [spotify_utils.py:658] - Searching for song: 'up next'
+2025-04-11 15:07:01,886 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-11 15:07:01,888 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next 2' with score 88
+2025-04-11 15:07:01,888 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next 3' with score 88
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Mase in '97' with score 22
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next' with score 100
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next (feat. Lil Jairmy)' with score 42
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next' with score 100
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next' with score 100
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'UP NEXT' with score 100
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next' with score 100
+2025-04-11 15:07:01,889 - DEBUG - [spotify_utils.py:679] - Match: 'Up' with score 44
+2025-04-11 15:07:01,890 - INFO - [spotify_utils.py:694] - Best match: 'Up Next' by Robin Banks (score: 100)
+2025-04-11 15:07:02,895 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Up Next' by Robin Banks
+2025-04-11 15:07:03,023 - DEBUG - [spotify_utils.py:744] - Playback started successfully
+2025-04-11 15:07:19,614 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:07:19,614 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:07:26,379 - INFO - [spotify_utils.py:658] - Searching for song: 'up next to'
+2025-04-11 15:07:27,078 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-11 15:07:27,079 - DEBUG - [spotify_utils.py:679] - Match: 'Want to Want Me' with score 40
+2025-04-11 15:07:27,079 - DEBUG - [spotify_utils.py:679] - Match: 'Next to Me - Sped Up Edit' with score 40
+2025-04-11 15:07:27,079 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next 3' with score 84
+2025-04-11 15:07:27,079 - DEBUG - [spotify_utils.py:679] - Match: 'WAKE UP NEXT TO EACHOTHER' with score 57
+2025-04-11 15:07:27,079 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next (feat. Lil Jairmy)' with score 50
+2025-04-11 15:07:27,080 - DEBUG - [spotify_utils.py:679] - Match: 'wake up next to god' with score 69
+2025-04-11 15:07:27,080 - DEBUG - [spotify_utils.py:679] - Match: 'Up Next' with score 82
+2025-04-11 15:07:27,080 - DEBUG - [spotify_utils.py:679] - Match: 'Die With A Smile' with score 23
+2025-04-11 15:07:27,080 - DEBUG - [spotify_utils.py:679] - Match: 'Good Luck, Babe!' with score 23
+2025-04-11 15:07:27,080 - DEBUG - [spotify_utils.py:679] - Match: 'Ordinary' with score 11
+2025-04-11 15:07:27,080 - INFO - [spotify_utils.py:694] - Best match: 'Up Next 3' by Lil Yachty (score: 84)
+2025-04-11 15:07:28,083 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Up Next 3' by Lil Yachty
+2025-04-11 15:07:28,210 - DEBUG - [spotify_utils.py:744] - Playback started successfully
+2025-04-11 15:07:37,458 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:07:37,458 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:07:42,433 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you'
+2025-04-11 15:07:43,052 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 100
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 100
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 43
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 100
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 100
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'FE!N (feat. Playboi Carti)' with score 32
+2025-04-11 15:07:43,053 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 43
+2025-04-11 15:07:43,054 - DEBUG - [spotify_utils.py:679] - Match: 'Die With A Smile' with score 37
+2025-04-11 15:07:43,054 - DEBUG - [spotify_utils.py:679] - Match: 'tv off (feat. lefty gunplay)' with score 26
+2025-04-11 15:07:43,054 - DEBUG - [spotify_utils.py:679] - Match: 'BIRDS OF A FEATHER' with score 28
+2025-04-11 15:07:43,054 - INFO - [spotify_utils.py:694] - Best match: 'Die For You' by The Weeknd (score: 100)
+2025-04-11 15:07:44,057 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You' by The Weeknd
+2025-04-11 15:07:44,215 - DEBUG - [spotify_utils.py:744] - Playback started successfully
+2025-04-11 15:07:54,212 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you on spotify'
+2025-04-11 15:07:54,719 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-11 15:07:54,720 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-11 15:07:54,720 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-11 15:07:54,720 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You - Remix' with score 68
+2025-04-11 15:07:54,720 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-11 15:07:54,720 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-11 15:07:54,721 - DEBUG - [spotify_utils.py:679] - Match: 'Warfare' with score 14
+2025-04-11 15:07:54,721 - DEBUG - [spotify_utils.py:679] - Match: 'Rivals' with score 14
+2025-04-11 15:07:54,721 - DEBUG - [spotify_utils.py:679] - Match: 'Murderer' with score 20
+2025-04-11 15:07:54,721 - DEBUG - [spotify_utils.py:679] - Match: 'One Day' with score 28
+2025-04-11 15:07:54,721 - DEBUG - [spotify_utils.py:679] - Match: 'The Dogg House' with score 39
+2025-04-11 15:07:54,721 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-11 15:07:55,726 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-11 15:07:55,866 - DEBUG - [spotify_utils.py:744] - Playback started successfully
