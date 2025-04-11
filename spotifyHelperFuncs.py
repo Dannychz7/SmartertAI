@@ -9,9 +9,59 @@ import pyautogui
 import psutil
 from contextlib import contextmanager
 from functools import wraps
-
-from spotifyConfig import *
 from logger import logger
+
+# Timing constants
+DEFAULT_TIMEOUT = 15  # seconds
+DEFAULT_COMMAND_PAUSE = 0.1  # seconds
+DEFAULT_COMMAND_WAIT = 2.5  # seconds
+PROCESS_CHECK_INTERVAL = 0.5  # seconds
+SPOTIFY_INIT_WAIT = 5  # seconds
+SEARCH_BAR_WAIT = 1  # seconds
+SONG_SEARCH_INTERVAL = 0.1  # seconds
+SEARCH_EXECUTE_WAIT = 1  # seconds
+
+# Retry logic
+MAX_RETRIES = 3
+
+def pre_check_spotify_environment():
+    """Pre-checks the environment to ensure all necessary conditions are met before performing any Spotify actions.
+
+    Raises:
+        OSNotSupportedError: If the operating system is not supported.
+        NetworkError: If there's a network connectivity issue.
+        Exception: If PyAutoGUI is not functional or Spotify fails to launch or activate.
+    """
+    try:
+        # 1. Check if the system is compatible
+        is_compatible, platform_info = check_system_compatibility()
+        if not is_compatible:
+            raise OSNotSupportedError(f"System not compatible: {platform_info}")
+
+        # 2. Check if network connectivity to Spotify is available
+        if not check_network_connectivity():
+            raise NetworkError("Network connectivity to Spotify is unavailable.")
+
+        # 3. Check if PyAutoGUI is functional for automation tasks
+        if not check_pyautogui_functionality():
+            raise Exception("PyAutoGUI cannot interact with the screen.")
+
+        # 4. Check if Spotify is running, if not, attempt to launch it
+        if not is_spotify_process_running():
+            launch_spotify()
+
+        # 5. Ensure that Spotify window is brought to the foreground
+        if not activate_spotify_window():
+            raise CommandExecutionError("Failed to bring Spotify window to the foreground.")
+
+        print("✅ All pre-checks passed successfully!")
+
+    except (OSNotSupportedError, NetworkError, SpotifyNotFoundError, CommandExecutionError) as e:
+        print(f"❌ Pre-check failed: {e}")
+        raise e
+    except Exception as e:
+        print(f"❌ Unexpected error during pre-checks: {e}")
+        raise
 
 class OSNotSupportedError(Exception):
     """Exception raised when current OS is not supported."""
@@ -259,5 +309,3 @@ def activate_spotify_window():
     except subprocess.SubprocessError as e:
         logger.error(f"Failed to activate Spotify window: {e}")
         raise CommandExecutionError(f"Failed to activate Spotify window: {e}")
-
-

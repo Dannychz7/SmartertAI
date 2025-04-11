@@ -2,7 +2,10 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from spotifyConfig import LOG_ROTATION_SIZE, MAX_LOG_BACKUPS, LOG_FILE
+
+LOG_ROTATION_SIZE = 5 * 1024 * 1024  # 5MB
+MAX_LOG_BACKUPS = 3
+LOG_FILE = Path("logs/spotify_automation.log")
 
 def setup_logging(log_file=LOG_FILE, console_level=logging.INFO, file_level=logging.DEBUG):
     """Set up logging with file rotation and console output."""

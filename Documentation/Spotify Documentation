@@ -1,0 +1,57 @@
+# 🎧 Spotify Control Function Reference
+
+This module provides convenient functions for controlling Spotify playback using the Spotify Web API via `spotipy`.
+
+---
+
+## 🔧 Helper Functions
+
+- **`check_devices()`**  
+  Checks for available active playback devices. Needed before starting playback.
+
+- **`get_playlists()` → list**  
+  Returns the user’s playlists as a list of dictionaries (name, id, etc.).
+
+- **`get_artists()`**  
+  Lists followed artists (or top artists depending on implementation).
+
+- **`search_song(query: str)` → (uri, info)**  
+  Searches for a song and returns its Spotify URI and metadata.
+
+- **`start_playback(song_uri: str)`**  
+  Starts playback for the given track URI.
+
+---
+
+## 🎮 High-Level Playback Controls
+
+- **`play_pause()`**  
+  Toggles between play and pause.
+
+- **`next_track()`**  
+  Skips to the next track in the queue.
+
+- **`previous_track()`**  
+  Returns to the previous track.
+
+- **`toggle_shuffle()`**  
+  Turns shuffle on or off.
+
+- **`toggle_repeat()`**  
+  Cycles repeat mode between `off`, `track`, and `context`.
+
+- **`volume_up()` / `volume_down()`**  
+  Increases or decreases volume by 10%.
+
+- **`skip_5_seconds()` / `go_back_5_seconds()`**  
+  Seeks forward or backward 5 seconds in the current track.
+
+- **`play_playlist(playlist_id: str)`**  
+  Starts playing a playlist by its Spotify ID.  
+  Example: `play_playlist(playlist[2]['id'])`   ** Note: playlist[i]['id'] comes from playlist = get_playlists() **
+
+- **`playsong(song_name: str)`**  
+  Searches and starts playback for a song by name.
+
+- **`get_current_track()` → (info, status)**  
+  Returns metadata and playback status of the currently playing track.

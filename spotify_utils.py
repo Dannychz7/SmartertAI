@@ -1,9 +1,37 @@
+# Helper Functions
+# check_devices() $
+# get_playlists() $
+# get_artists()   $
+# search_song(str query) $
+# start_playback(songUri) $
+    
+# High level Funcs
+# play_pause() $
+# next_track() $
+# previous_track() $
+# toggle_shuffle() $
+# toggle_repeat() $ 
+# volume_up() $
+# volume_down() $
+# skip_5_seconds() $
+# go_back_5_seconds() $
+# play_playlist(playlistId)    
+# play_artist(artistID)
+# playsong(str song name)
+# get_current_track()
+
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import time
 from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
 from fuzzywuzzy import fuzz
 from logger import logger
+from spotifyHelperFuncs import pre_check_spotify_environment
+
+# Global sleep durations (in seconds)
+helperSleep = 0.3
+highLevelSleep = 0.5
+playSongSleep = 1.0
 
 # Replace with your Spotify developer credentials
 SPOTIPY_REDIRECT_URI = 'http://127.0.0.1:8888/callback'
@@ -31,6 +59,14 @@ try:
 except Exception as e:
     logger.error(f"Failed to initialize Spotify API connection: {e}")
     raise
+
+def wait(category="helper"):
+    if category == "helper":
+        time.sleep(helperSleep)
+    elif category == "high":
+        time.sleep(highLevelSleep)
+    elif category == "play":
+        time.sleep(playSongSleep)
 
 # --- Playback Controls ---
 def play_liked_songs(limit=100):
@@ -110,11 +146,14 @@ def play_pause():
             logger.debug("Currently playing, pausing playback")
             sp.pause_playback()
             print("Playback paused")
+            
+            wait("high")
             return True, "paused"
         else:
             logger.debug("Currently paused, resuming playback")
             sp.start_playback()
             print("Playback resumed")
+            wait("high")
             return True, "playing"
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error toggling play/pause: {e}")
@@ -145,6 +184,8 @@ def next_track():
             sp.next_track()
             logger.debug("Skipped to next track successfully")
             print("Skipped to next track")
+            
+            wait("high")
             return True
         else:
             logger.warning("No next track available")
@@ -179,6 +220,8 @@ def previous_track():
             sp.previous_track()
             logger.debug("Went to previous track successfully")
             print("Went to previous track")
+            
+            wait("high")
             return True
         else:
             logger.warning("No previous track available")
@@ -214,6 +257,8 @@ def toggle_shuffle():
         sp.shuffle(new_state)
         logger.debug(f"Shuffle mode changed from {current_state} to {new_state}")
         print(f"Shuffle mode {'enabled' if new_state else 'disabled'}")
+        
+        wait("high")
         return True, new_state
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error toggling shuffle mode: {e}")
@@ -253,6 +298,8 @@ def toggle_repeat():
         
         logger.debug(f"Repeat mode changed from '{state}' to '{new_state}'")
         print(state_message[new_state])
+        
+        wait("high")
         return True, new_state
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error toggling repeat mode: {e}")
@@ -287,6 +334,8 @@ def volume_up(step=10):
         sp.volume(new_volume)
         logger.debug(f"Volume increased from {current_volume}% to {new_volume}%")
         print(f"Volume: {new_volume}%")
+        
+        wait("high")
         return True, new_volume
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error increasing volume: {e}")
@@ -321,6 +370,8 @@ def volume_down(step=10):
         sp.volume(new_volume)
         logger.debug(f"Volume decreased from {current_volume}% to {new_volume}%")
         print(f"Volume: {new_volume}%")
+        
+        wait("high")
         return True, new_volume
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error decreasing volume: {e}")
@@ -352,6 +403,8 @@ def skip_5_seconds():
         sp.seek_track(new_position)
         logger.debug(f"Position changed from {current_position}ms to {new_position}ms")
         print("Skipped forward 5 seconds")
+        
+        wait("high")
         return True
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error skipping forward: {e}")
@@ -383,6 +436,8 @@ def go_back_5_seconds():
         sp.seek_track(new_position)
         logger.debug(f"Position changed from {current_position}ms to {new_position}ms")
         print("Went back 5 seconds")
+        
+        wait("high")
         return True
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error going back: {e}")
@@ -413,6 +468,7 @@ def check_devices():
                 print(f"{i+1}. {device['name']} ({device['type']}) - {'Active' if device['is_active'] else 'Inactive'}")
                 logger.debug(f"Device {i+1}: {device['name']} (ID: {device['id']}, Type: {device['type']})")
             
+            wait("helper")
             return True, devices['devices']
         else:
             logger.warning("No active devices found")
@@ -451,6 +507,7 @@ def get_playlists(print_results=True):
                     print(f"{idx + 1}. {playlist['name']} ({playlist['tracks']['total']} tracks)")
                     logger.debug(f"Playlist {idx+1}: {playlist['name']} (ID: {playlist['id']})")
             
+            wait("helper")
             return playlists['items']
         else:
             logger.warning("No playlists found")
@@ -490,6 +547,8 @@ def play_playlist(playlist_id):
         sp.start_playback(context_uri=context_uri)
         logger.debug(f"Started playback of playlist: {context_uri}")
         print(f"Playing '{playlist_name}'")
+        
+        wait("high")
         return True
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error playing playlist: {e}")
@@ -525,6 +584,7 @@ def get_artists(limit=5, print_results=True):
                     print(f"{idx + 1}. {artist['name']} ({artist['popularity']} popularity)")
                     logger.debug(f"Artist {idx+1}: {artist['name']} (ID: {artist['id']})")
             
+            wait("helper")
             return artists['items']
         else:
             logger.warning("No top artists found")
@@ -567,6 +627,8 @@ def play_artist(artist_id):
             logger.debug(f"Found {len(track_uris)} tracks for artist")
             sp.start_playback(uris=track_uris)
             print(f"Playing top tracks by {artist_name}")
+            
+            wait("high")
             return True
         else:
             logger.warning(f"No tracks found for artist: {artist_id}")
@@ -654,7 +716,7 @@ def search_song(query, print_results=True):
         return None, None
     
     
-def play_song(song_uri, song_info=None):
+def start_playback(song_uri, song_info=None):
     """
     Play a song by its URI with proper error handling
     
@@ -688,6 +750,39 @@ def play_song(song_uri, song_info=None):
     except Exception as e:
         logger.error(f"Unexpected error during playback: {e}")
         print(f"Error playing song: {e}")
+        return False
+
+def play_song(song):
+    """
+    Given a song name string, searches for it and starts playback.
+
+    Args:
+        song (str): The name of the song to play.
+
+    Returns:
+        bool: True if playback was started successfully, False otherwise.
+    """
+    if not isinstance(song, str) or not song.strip():
+        logger.warning("Invalid song input provided")
+        print("Please provide a valid song name.")
+        return False
+
+    try:
+        uri, info = search_song(song)
+        if uri:
+            wait("play")
+            return start_playback(uri, info)
+        else:
+            logger.warning("No matching song found to play")
+            print("Couldn't find a matching song to play.")
+            return False
+    except spotipy.exceptions.SpotifyException as e:
+        logger.error(f"Spotify API error in play_song: {e}")
+        print(f"Spotify error: {e}")
+        return False
+    except Exception as e:
+        logger.error(f"Unexpected error in play_song: {e}")
+        print(f"An unexpected error occurred: {e}")
         return False
 
 
@@ -731,6 +826,7 @@ def get_current_track():
         print(f"Time: {progress_str} / {duration_str} ({progress_pct:.1f}%)")
         print(f"Status: {'Playing' if track_info['is_playing'] else 'Paused'}")
         
+        wait("high")
         return True, track_info
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error getting current track: {e}")
@@ -740,3 +836,8 @@ def get_current_track():
         logger.error(f"Error getting current track: {e}")
         print(f"Error getting current track: {e}")
         return False, None
+
+pre_check_spotify_environment()
+
+if __name__ == "__main__":
+    pre_check_spotify_environment()
