@@ -269,6 +269,8 @@ def launch_spotify():
                 if is_spotify_process_running():
                     logger.info(f"Spotify launched successfully, waiting {SPOTIFY_INIT_WAIT}s for initialization")
                     time.sleep(SPOTIFY_INIT_WAIT)  # Wait for Spotify to initialize
+                    # Switch focus away from Spotify
+                    pyautogui.hotkey('space')
                     return True
                 time.sleep(PROCESS_CHECK_INTERVAL)
                 

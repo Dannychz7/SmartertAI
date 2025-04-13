@@ -26,7 +26,6 @@ import time
 from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
 from fuzzywuzzy import fuzz
 from logger import logger
-from spotifyHelperFuncs import pre_check_spotify_environment
 
 # Global sleep durations (in seconds)
 helperSleep = 0.3
@@ -600,6 +599,92 @@ def get_artists(limit=5, print_results=True):
         print(f"Error fetching top artists: {e}")
         return []
 
+def play_artist_by_name(artist_name):
+    """
+    Search for an artist by name using fuzzy matching and play their top tracks
+    
+    Args:
+        artist_name (str): Name of the artist to search for and play
+        
+    Returns:
+        bool: True if playback started successfully, False otherwise
+    """
+    logger.info(f"Searching for and playing artist: {artist_name}")
+    try:
+        # Search for the artist with a more general query to get multiple results
+        results = sp.search(q=artist_name, type='artist', limit=10)
+        artists = results['artists']['items']
+        
+        if not artists:
+            logger.warning(f"No artist found with name: {artist_name}")
+            print(f"No artist found with name: {artist_name}")
+            return False
+        
+        # Use fuzzy matching to find the best artist match
+        best_match = None
+        highest_score = 0
+        
+        for artist in artists:
+            found_name = artist['name']
+            # Calculate fuzzy matching score
+            score = fuzz.ratio(artist_name.lower(), found_name.lower())
+            
+            # Also check partial token matching for artists with longer names
+            token_score = fuzz.partial_token_set_ratio(artist_name.lower(), found_name.lower())
+            
+            # Take the higher of the two scores
+            final_score = max(score, token_score)
+            
+            if final_score > highest_score:
+                highest_score = final_score
+                best_match = artist
+        
+        # If we have a match with at least a decent score (above 60)
+        if best_match and highest_score > 60:
+            artist_id = best_match['id']
+            found_name = best_match['name']
+            
+            # Log the match information
+            logger.info(f"Found artist match: '{found_name}' with score: {highest_score}")
+            
+            if highest_score < 85:
+                # If score is good but not great, inform the user of the match
+                print(f"Playing music by {found_name} (closest match to '{artist_name}')")
+            else:
+                print(f"Playing top tracks by {found_name}")
+            
+            # Get the artist's top tracks
+            top_tracks = sp.artist_top_tracks(artist_id)
+            track_uris = [track['uri'] for track in top_tracks['tracks']]
+            
+            if track_uris:
+                logger.debug(f"Found {len(track_uris)} tracks for artist")
+                sp.start_playback(uris=track_uris)
+                
+                try:
+                    wait("high")  # Assuming this is a helper function in your codebase
+                except NameError:
+                    # If wait() is not defined, simply continue
+                    pass
+                    
+                return True
+            else:
+                logger.warning(f"No tracks found for artist: {found_name}")
+                print(f"No tracks found for {found_name}")
+                return False
+        else:
+            logger.warning(f"No good artist match found for: {artist_name}")
+            print(f"No good match found for artist: {artist_name}")
+            return False
+            
+    except spotipy.exceptions.SpotifyException as e:
+        logger.error(f"Spotify API error when playing artist: {e}")
+        print(f"Spotify error: {e}")
+        return False
+    except Exception as e:
+        logger.error(f"Error playing artist: {e}")
+        print(f"Error playing artist: {e}")
+        return False
 
 def play_artist(artist_id):
     """
@@ -838,4 +923,5 @@ def get_current_track():
         return False, None
 
 if __name__ == "__main__":
-    pre_check_spotify_environment()
+    # play_artist_by_name("the Weekend")
+    pass

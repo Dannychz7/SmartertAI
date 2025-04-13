@@ -1272,3 +1272,321 @@
 2025-04-11 15:07:54,721 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
 2025-04-11 15:07:55,726 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
 2025-04-11 15:07:55,866 - DEBUG - [spotify_utils.py:744] - Playback started successfully
+2025-04-11 15:10:02,871 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-11 15:10:02,872 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-11 15:10:02,873 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-11 15:10:02,890 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-11 15:10:02,899 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=861, y=385)
+2025-04-11 15:10:02,928 - INFO - [spotifyHelperFuncs.py:263] - Launching Spotify...
+2025-04-11 15:10:03,007 - INFO - [spotifyHelperFuncs.py:270] - Spotify launched successfully, waiting 5s for initialization
+2025-04-12 10:54:03,889 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-12 10:54:03,890 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-12 10:54:10,976 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you on spotify'
+2025-04-12 10:54:11,853 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You - Remix' with score 68
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:54:11,854 - DEBUG - [spotify_utils.py:679] - Match: 'Warfare' with score 14
+2025-04-12 10:54:11,855 - DEBUG - [spotify_utils.py:679] - Match: 'No Response' with score 30
+2025-04-12 10:54:11,855 - DEBUG - [spotify_utils.py:679] - Match: 'Rivals' with score 14
+2025-04-12 10:54:11,855 - DEBUG - [spotify_utils.py:679] - Match: 'Murderer' with score 20
+2025-04-12 10:54:11,855 - DEBUG - [spotify_utils.py:679] - Match: 'The Dogg House' with score 39
+2025-04-12 10:54:11,855 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-12 10:54:12,860 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-12 10:54:12,924 - ERROR - [spotify_utils.py:747] - Spotify API error during playback: http status: 404, code: -1 - https://api.spotify.com/v1/me/player/play:
+ Player command failed: No active device found, reason: NO_ACTIVE_DEVICE
+2025-04-12 10:55:46,362 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-12 10:55:46,362 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-12 10:55:51,942 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-12 10:55:51,966 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-12 10:55:52,005 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1134, y=716)
+2025-04-12 10:55:52,045 - INFO - [spotifyHelperFuncs.py:263] - Launching Spotify...
+2025-04-12 10:55:52,145 - INFO - [spotifyHelperFuncs.py:270] - Spotify launched successfully, waiting 5s for initialization
+2025-04-12 10:55:58,455 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you on spotify'
+2025-04-12 10:55:58,939 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-12 10:55:58,941 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:55:58,941 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:55:58,941 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You - Remix' with score 68
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'Warfare' with score 14
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'No Response' with score 30
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'Rivals' with score 14
+2025-04-12 10:55:58,942 - DEBUG - [spotify_utils.py:679] - Match: 'Murderer' with score 20
+2025-04-12 10:55:58,943 - DEBUG - [spotify_utils.py:679] - Match: 'The Dogg House' with score 39
+2025-04-12 10:55:58,943 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-12 10:55:59,948 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-12 10:56:00,013 - ERROR - [spotify_utils.py:747] - Spotify API error during playback: http status: 404, code: -1 - https://api.spotify.com/v1/me/player/play:
+ Player command failed: No active device found, reason: NO_ACTIVE_DEVICE
+2025-04-12 10:56:19,283 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-12 10:56:19,296 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-12 10:56:19,296 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1143, y=780)
+2025-04-12 10:56:20,509 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you on spotify'
+2025-04-12 10:56:21,029 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-12 10:56:21,030 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:21,030 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:21,030 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You - Remix' with score 68
+2025-04-12 10:56:21,030 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'Warfare' with score 14
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'No Response' with score 30
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'Rivals' with score 14
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'Murderer' with score 20
+2025-04-12 10:56:21,031 - DEBUG - [spotify_utils.py:679] - Match: 'The Dogg House' with score 39
+2025-04-12 10:56:21,031 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-12 10:56:22,033 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-12 10:56:22,094 - ERROR - [spotify_utils.py:747] - Spotify API error during playback: http status: 404, code: -1 - https://api.spotify.com/v1/me/player/play:
+ Player command failed: No active device found, reason: NO_ACTIVE_DEVICE
+2025-04-12 10:56:35,253 - INFO - [spotify_utils.py:50] - Initializing Spotify API connection
+2025-04-12 10:56:35,253 - INFO - [spotify_utils.py:58] - Spotify API connection established successfully
+2025-04-12 10:56:42,117 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-12 10:56:42,134 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-12 10:56:42,157 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1183, y=805)
+2025-04-12 10:56:43,369 - INFO - [spotify_utils.py:658] - Searching for song: 'die for you on spotify'
+2025-04-12 10:56:43,862 - DEBUG - [spotify_utils.py:663] - Found 10 potential matches
+2025-04-12 10:56:43,864 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:43,865 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:43,865 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You - Remix' with score 68
+2025-04-12 10:56:43,865 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-12 10:56:43,865 - DEBUG - [spotify_utils.py:679] - Match: 'Die For You' with score 67
+2025-04-12 10:56:43,865 - DEBUG - [spotify_utils.py:679] - Match: 'Warfare' with score 14
+2025-04-12 10:56:43,866 - DEBUG - [spotify_utils.py:679] - Match: 'No Response' with score 30
+2025-04-12 10:56:43,866 - DEBUG - [spotify_utils.py:679] - Match: 'Rivals' with score 14
+2025-04-12 10:56:43,866 - DEBUG - [spotify_utils.py:679] - Match: 'Murderer' with score 20
+2025-04-12 10:56:43,866 - DEBUG - [spotify_utils.py:679] - Match: 'The Dogg House' with score 39
+2025-04-12 10:56:43,866 - INFO - [spotify_utils.py:694] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-12 10:56:44,870 - INFO - [spotify_utils.py:731] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-12 10:56:45,019 - DEBUG - [spotify_utils.py:744] - Playback started successfully
+2025-04-12 10:57:57,154 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-12 10:57:57,155 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-12 10:58:02,810 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-12 10:58:02,833 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-12 10:58:02,854 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1090, y=711)
+2025-04-12 10:58:04,063 - INFO - [spotify_utils.py:136] - Toggling play/pause
+2025-04-12 10:58:04,244 - DEBUG - [spotify_utils.py:152] - Currently paused, resuming playback
+2025-04-13 14:26:18,847 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 14:26:18,848 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 14:27:03,819 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 14:27:03,820 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 14:27:09,547 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-13 14:27:09,566 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 14:27:09,609 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1168, y=706)
+2025-04-13 14:27:09,661 - INFO - [spotifyHelperFuncs.py:263] - Launching Spotify...
+2025-04-13 14:27:09,761 - INFO - [spotifyHelperFuncs.py:270] - Spotify launched successfully, waiting 5s for initialization
+2025-04-13 14:27:16,122 - INFO - [spotify_utils.py:712] - Searching for song: 'die for you on spotify'
+2025-04-13 14:27:16,853 - DEBUG - [spotify_utils.py:717] - Found 10 potential matches
+2025-04-13 14:27:16,860 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:27:16,861 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:27:16,861 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You - Remix' with score 68
+2025-04-13 14:27:16,862 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'Warfare' with score 14
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'Rivals' with score 14
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'The Detour' with score 25
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'Murderer' with score 20
+2025-04-13 14:27:16,863 - DEBUG - [spotify_utils.py:733] - Match: 'The Dogg House' with score 39
+2025-04-13 14:27:16,863 - INFO - [spotify_utils.py:748] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-13 14:27:17,868 - INFO - [spotify_utils.py:785] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-13 14:27:17,926 - ERROR - [spotify_utils.py:801] - Spotify API error during playback: http status: 404, code: -1 - https://api.spotify.com/v1/me/player/play:
+ Player command failed: No active device found, reason: NO_ACTIVE_DEVICE
+2025-04-13 14:34:03,510 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 14:34:03,511 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 14:34:09,837 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 14:34:09,860 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 14:34:09,901 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1091, y=511)
+2025-04-13 14:34:09,931 - INFO - [spotifyHelperFuncs.py:267] - Launching Spotify...
+2025-04-13 14:34:10,022 - INFO - [spotifyHelperFuncs.py:274] - Spotify launched successfully, waiting 5s for initialization
+2025-04-13 14:34:15,028 - INFO - [spotify_utils.py:136] - Toggling play/pause
+2025-04-13 14:34:15,164 - WARNING - [spotify_utils.py:140] - No active playback session found
+2025-04-13 14:34:16,414 - INFO - [spotify_utils.py:712] - Searching for song: 'die for you on spotify'
+2025-04-13 14:34:16,818 - DEBUG - [spotify_utils.py:717] - Found 10 potential matches
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You - Remix' with score 68
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Warfare' with score 14
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Rivals' with score 14
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'The Detour' with score 25
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'Murderer' with score 20
+2025-04-13 14:34:16,819 - DEBUG - [spotify_utils.py:733] - Match: 'The Dogg House' with score 39
+2025-04-13 14:34:16,820 - INFO - [spotify_utils.py:748] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-13 14:34:17,825 - INFO - [spotify_utils.py:785] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-13 14:34:17,881 - ERROR - [spotify_utils.py:801] - Spotify API error during playback: http status: 404, code: -1 - https://api.spotify.com/v1/me/player/play:
+ Player command failed: No active device found, reason: NO_ACTIVE_DEVICE
+2025-04-13 14:36:28,884 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 14:36:28,884 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 14:36:34,018 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 14:36:34,039 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 14:36:34,078 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1159, y=761)
+2025-04-13 14:36:34,107 - INFO - [spotifyHelperFuncs.py:267] - Launching Spotify...
+2025-04-13 14:36:34,197 - INFO - [spotifyHelperFuncs.py:274] - Spotify launched successfully, waiting 5s for initialization
+2025-04-13 14:36:40,582 - INFO - [spotify_utils.py:712] - Searching for song: 'die for you on spotify'
+2025-04-13 14:36:41,093 - DEBUG - [spotify_utils.py:717] - Found 10 potential matches
+2025-04-13 14:36:41,095 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:36:41,096 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:36:41,096 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You - Remix' with score 68
+2025-04-13 14:36:41,096 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You (with Ariana Grande) - Remix' with score 48
+2025-04-13 14:36:41,096 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 67
+2025-04-13 14:36:41,096 - DEBUG - [spotify_utils.py:733] - Match: 'Warfare' with score 14
+2025-04-13 14:36:41,097 - DEBUG - [spotify_utils.py:733] - Match: 'Rivals' with score 14
+2025-04-13 14:36:41,097 - DEBUG - [spotify_utils.py:733] - Match: 'The Detour' with score 25
+2025-04-13 14:36:41,097 - DEBUG - [spotify_utils.py:733] - Match: 'Murderer' with score 20
+2025-04-13 14:36:41,097 - DEBUG - [spotify_utils.py:733] - Match: 'The Dogg House' with score 39
+2025-04-13 14:36:41,097 - INFO - [spotify_utils.py:748] - Best match: 'Die For You - Remix' by The Weeknd (score: 68)
+2025-04-13 14:36:42,103 - INFO - [spotify_utils.py:785] - Attempting to play song: 'Die For You - Remix' by The Weeknd
+2025-04-13 14:36:42,375 - DEBUG - [spotify_utils.py:798] - Playback started successfully
+2025-04-13 15:13:26,387 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:13:26,387 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:13:32,900 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:13:32,930 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:13:32,964 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1048, y=544)
+2025-04-13 15:13:32,988 - INFO - [spotifyHelperFuncs.py:267] - Launching Spotify...
+2025-04-13 15:13:33,077 - INFO - [spotifyHelperFuncs.py:274] - Spotify launched successfully, waiting 5s for initialization
+2025-04-13 15:13:39,713 - INFO - [spotify_utils.py:712] - Searching for song: 'die for you'
+2025-04-13 15:13:40,578 - DEBUG - [spotify_utils.py:717] - Found 10 potential matches
+2025-04-13 15:13:40,579 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 100
+2025-04-13 15:13:40,579 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 100
+2025-04-13 15:13:40,580 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You (with Ariana Grande) - Remix' with score 43
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 100
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'FE!N (feat. Playboi Carti)' with score 32
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You (with Ariana Grande) - Remix' with score 43
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'Die With A Smile' with score 37
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'Die For You' with score 100
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'tv off (feat. lefty gunplay)' with score 26
+2025-04-13 15:13:40,581 - DEBUG - [spotify_utils.py:733] - Match: 'BIRDS OF A FEATHER' with score 28
+2025-04-13 15:13:40,582 - INFO - [spotify_utils.py:748] - Best match: 'Die For You' by The Weeknd (score: 100)
+2025-04-13 15:13:41,586 - INFO - [spotify_utils.py:785] - Attempting to play song: 'Die For You' by The Weeknd
+2025-04-13 15:13:41,735 - DEBUG - [spotify_utils.py:798] - Playback started successfully
+2025-04-13 15:18:24,890 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:18:24,891 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:18:29,346 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:18:29,389 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:18:29,410 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1160, y=720)
+2025-04-13 15:18:30,625 - INFO - [spotify_utils.py:136] - Toggling play/pause
+2025-04-13 15:18:30,806 - DEBUG - [spotify_utils.py:152] - Currently paused, resuming playback
+2025-04-13 15:18:56,898 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:18:56,914 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:18:56,914 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1151, y=837)
+2025-04-13 15:18:58,119 - INFO - [spotify_utils.py:136] - Toggling play/pause
+2025-04-13 15:18:58,227 - DEBUG - [spotify_utils.py:145] - Currently playing, pausing playback
+2025-04-13 15:19:18,093 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:19:18,166 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:19:18,167 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1212, y=817)
+2025-04-13 15:19:19,375 - INFO - [spotify_utils.py:174] - Skipping to next track
+2025-04-13 15:19:19,482 - WARNING - [spotify_utils.py:190] - No next track available
+2025-04-13 15:21:13,473 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:21:13,473 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:21:18,199 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:21:18,273 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:21:18,292 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1107, y=705)
+2025-04-13 15:21:19,504 - INFO - [spotify_utils.py:210] - Going to previous track
+2025-04-13 15:21:19,728 - WARNING - [spotify_utils.py:226] - No previous track available
+2025-04-13 15:24:35,721 - INFO - [Spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:24:35,721 - INFO - [Spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:24:48,114 - INFO - [Spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:24:48,115 - INFO - [Spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:27:41,760 - INFO - [Spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:27:41,760 - INFO - [Spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:27:45,240 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:27:45,241 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:27:50,296 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:27:50,330 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:27:50,361 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1202, y=817)
+2025-04-13 15:28:10,170 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:28:10,190 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:28:10,191 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1110, y=841)
+2025-04-13 15:28:31,361 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:28:31,391 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:28:31,392 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1099, y=756)
+2025-04-13 15:28:40,788 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:28:40,807 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:28:40,807 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1110, y=813)
+2025-04-13 15:28:55,449 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:28:55,464 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:28:55,465 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1108, y=825)
+2025-04-13 15:29:03,312 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:29:03,329 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:29:03,330 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1156, y=834)
+2025-04-13 15:29:13,508 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:29:13,524 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:29:13,525 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1115, y=820)
+2025-04-13 15:29:39,469 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:29:42,491 - WARNING - [spotifyHelperFuncs.py:193] - Network connectivity issue: [Errno 8] nodename nor servname provided, or not known
+2025-04-13 15:30:04,816 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:30:04,819 - WARNING - [spotifyHelperFuncs.py:193] - Network connectivity issue: [Errno 8] nodename nor servname provided, or not known
+2025-04-13 15:30:30,674 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:30:30,678 - WARNING - [spotifyHelperFuncs.py:193] - Network connectivity issue: [Errno 8] nodename nor servname provided, or not known
+2025-04-13 15:31:18,383 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:31:18,425 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:31:18,427 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1140, y=806)
+2025-04-13 15:31:28,025 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:31:28,040 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:31:28,040 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1140, y=806)
+2025-04-13 15:31:42,469 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:31:42,491 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:31:42,492 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1056, y=794)
+2025-04-13 15:32:16,772 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:32:16,830 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:32:16,830 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1110, y=824)
+2025-04-13 15:32:35,229 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:32:35,245 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:32:35,245 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=440, y=955)
+2025-04-13 15:32:52,995 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:32:53,016 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:32:53,017 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1176, y=766)
+2025-04-13 15:33:31,285 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:33:31,307 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:33:31,307 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1189, y=787)
+2025-04-13 15:34:02,037 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:34:02,057 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:34:02,057 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1173, y=830)
+2025-04-13 15:34:17,552 - INFO - [spotifyHelperFuncs.py:162] - Running on macOS version 13.3.1
+2025-04-13 15:34:17,567 - DEBUG - [spotifyHelperFuncs.py:205] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:34:17,568 - DEBUG - [spotifyHelperFuncs.py:209] - Mouse position: Point(x=1110, y=809)
+2025-04-13 15:42:23,142 - INFO - [spotify_utils.py:49] - Initializing Spotify API connection
+2025-04-13 15:42:23,142 - INFO - [spotify_utils.py:57] - Spotify API connection established successfully
+2025-04-13 15:42:35,394 - INFO - [main.py:46] - Processing command: play after hours
+2025-04-13 15:42:35,396 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-13 15:42:35,435 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:42:35,460 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1174, y=737)
+2025-04-13 15:42:36,669 - INFO - [spotify_command_handler.py:76] - Processing Spotify command: play after hours
+2025-04-13 15:42:36,670 - INFO - [spotify_utils.py:743] - Searching for song: 'after hours'
+2025-04-13 15:42:37,179 - DEBUG - [spotify_utils.py:748] - Found 10 potential matches
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours - Live' with score 76
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'Save Your Tears' with score 54
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,180 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,181 - DEBUG - [spotify_utils.py:764] - Match: 'Save Your Tears (Remix) (with Ariana Grande) - Bonus Track' with score 26
+2025-04-13 15:42:37,181 - DEBUG - [spotify_utils.py:764] - Match: 'AFTER HOURS' with score 100
+2025-04-13 15:42:37,181 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,181 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 100
+2025-04-13 15:42:37,181 - INFO - [spotify_utils.py:779] - Best match: 'After Hours' by The Weeknd (score: 100)
+2025-04-13 15:42:38,185 - INFO - [spotify_utils.py:816] - Attempting to play song: 'After Hours' by The Weeknd
+2025-04-13 15:42:38,410 - DEBUG - [spotify_utils.py:829] - Playback started successfully
+2025-04-13 15:43:11,475 - INFO - [main.py:46] - Processing command: play after hours live
+2025-04-13 15:43:11,479 - INFO - [spotifyHelperFuncs.py:158] - Running on macOS version 13.3.1
+2025-04-13 15:43:11,494 - DEBUG - [spotifyHelperFuncs.py:201] - Screen size detected: Size(width=1470, height=956)
+2025-04-13 15:43:11,495 - DEBUG - [spotifyHelperFuncs.py:205] - Mouse position: Point(x=1131, y=814)
+2025-04-13 15:43:12,717 - INFO - [spotify_command_handler.py:76] - Processing Spotify command: play after hours live
+2025-04-13 15:43:12,718 - INFO - [spotify_utils.py:743] - Searching for song: 'after hours live'
+2025-04-13 15:43:13,231 - DEBUG - [spotify_utils.py:748] - Found 10 potential matches
+2025-04-13 15:43:13,233 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours - Live' with score 94
+2025-04-13 15:43:13,233 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours - Live' with score 94
+2025-04-13 15:43:13,233 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 81
+2025-04-13 15:43:13,233 - DEBUG - [spotify_utils.py:764] - Match: 'Scared To Live' with score 60
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours - Live' with score 94
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 81
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'Pound Cake / Paris Morton Music 2' with score 33
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'After Hours' with score 81
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'Stay Ready (What A Life)' with score 40
+2025-04-13 15:43:13,234 - DEBUG - [spotify_utils.py:764] - Match: 'These Walls' with score 37
+2025-04-13 15:43:13,234 - INFO - [spotify_utils.py:779] - Best match: 'After Hours - Live' by The Weeknd (score: 94)
+2025-04-13 15:43:14,239 - INFO - [spotify_utils.py:816] - Attempting to play song: 'After Hours - Live' by The Weeknd
+2025-04-13 15:43:14,373 - DEBUG - [spotify_utils.py:829] - Playback started successfully
+2025-04-13 15:43:20,185 - INFO - [main.py:46] - Processing command: no no no no no no
+2025-04-13 15:44:22,698 - INFO - [main.py:46] - Processing command: regular short story

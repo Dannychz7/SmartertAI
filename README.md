@@ -16,25 +16,22 @@ Smarter Glass AI will one day provide real-time information and interactive feat
 
 * CURRENTLY UNDER DEVELOPMENT *
 
-Bugs to Fix: ***
-[] Listning threads do not let speech LLM talk, fix speech function in application or create another one taylored for llm speech reponse
-[] Quitting command takes time as all not all threads quit once user says exit
-[x] Change AI voice, maybe using Murf API or eleven labs, find free solution
-    - Done, implemented voice snippets from Murf API and used that as a basic voice command structure. Currently does not support
-        live text-to-speach, I have a solution ready but not yet implemented. Added voice snippets 
-[] Voice detection needs to be refined, small time between listening and switiching to another listening makes it so that some is
-audio is cut off or not properly working, maybe new mic or software if necessary
-[] Spotify voice commands needs work, but spotify has been fully integrated into the codebase with error checking and production
-level code. Logging is now in place. 
-    - SOLUTION: USING AN LLM TO PROCESS COMMANDS
-
-Features to Add: **
-[] Add refined error checking 
-[] Add more functionality to app, youtube.com, google.com, web searches, voice scrolling, etc... 
-[] Add camera for LLM image explaination
-[] Find local LLM for looking and processing images
-[] Do some other work in the meantime while LLM is thinking (Maybe talk about the news or something like that)
-[x] begin splitting project into modular pieces, cannot have it all in one file
+Notes for Testing Spotify Voice Commands:
+    play_song | Works: [x]
+    play_pause, | Works: [x]
+    next_track, | works: [x] 
+    previous_track, | works: [x] 
+        With next and previous, if no song is next or previous, play songs by the artist by using play_artist_by_name
+    toggle_shuffle, 
+    toggle_repeat, # standalone
+    volume_up, # Standalone
+    volume_down, # standalone
+    skip_5_seconds, # standalone
+    go_back_5_seconds, # standalone [x ^]
+    play_playlist, # Needs, gets playlists id, call get_playlist first to get id) Needs refinment
+    play_artist, # needs get_artists id, call get_artists first to get id)
+    play_artist_by_name, # standalone
+    get_current_track, #standalone
 
 
 Features Implemented:
