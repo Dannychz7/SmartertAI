@@ -20,18 +20,20 @@ Notes for Testing Spotify Voice Commands:
     play_song | Works: [x]
     play_pause, | Works: [x]
     next_track, | works: [x] 
-    previous_track, | works: [x] 
+    previous_track, | works: [] 
         With next and previous, if no song is next or previous, play songs by the artist by using play_artist_by_name
-    toggle_shuffle, 
-    toggle_repeat, # standalone
-    volume_up, # Standalone
-    volume_down, # standalone
-    skip_5_seconds, # standalone
-    go_back_5_seconds, # standalone [x ^]
+    toggle_shuffle, | works: [x] 
+    toggle_repeat, | works: [x] 
+    volume_up, | works: [x] 
+    volume_down,| works: [x] 
+    skip_5_seconds, | works: [x] 
+    go_back_5_seconds, | works: [x] 
     play_playlist, # Needs, gets playlists id, call get_playlist first to get id) Needs refinment
-    play_artist, # needs get_artists id, call get_artists first to get id)
-    play_artist_by_name, # standalone
-    get_current_track, #standalone
+    play_artist, # needs get_artists id, call get_artists first to get id) | works: [x] 
+    play_artist_by_name, | works: [x] 
+    get_current_track, | works: [x] 
+
+    - THEY ALL WORK, BUT ALL NEEDS REFINEMENT IN TERMS OF WHAT USER WANTS (I.E PLAY THE WEEKND, WILL PLAY SONGS, NOT THE ARTIST)
 
 
 Features Implemented:

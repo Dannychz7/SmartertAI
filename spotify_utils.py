@@ -167,6 +167,7 @@ def play_pause():
 def next_track():
     """
     Skip to the next track in the queue
+    If no next track is available, play music from the current artist or related artists
     
     Returns:
         bool: True if skipped successfully, False otherwise
@@ -187,9 +188,34 @@ def next_track():
             wait("high")
             return True
         else:
-            logger.warning("No next track available")
-            print("No next track available in the queue")
-            return False
+            # No next track available, so let's play related music
+            logger.info("No next track available, finding related music to play")
+            print("No next track available in the queue. Finding related music...")
+            
+            # Get the current track information
+            success, track_info = get_current_track()
+            if not success or not track_info:
+                logger.warning("Could not get current track information")
+                print("Could not get current track information to find related music")
+                return False
+            
+            # Get the current artist's name
+            current_artist = track_info['artist']
+            logger.info(f"Current artist: {current_artist}, finding related music")
+            print(f"Finding more music from {current_artist}...")
+            
+            # Play more music from the same artist
+            play_success = play_artist_by_name(current_artist)
+            
+            if play_success:
+                logger.info(f"Successfully started playing more music from {current_artist}")
+                return True
+            else:
+                # If we couldn't play music by the same artist, we could try finding related artists
+                # This would require implementing a new function to find and play related artists
+                logger.warning(f"Could not play more music from {current_artist}")
+                print("Could not find more music to play")
+                return False
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error skipping to next track: {e}")
         print(f"Spotify error: {e}")
@@ -203,6 +229,7 @@ def next_track():
 def previous_track():
     """
     Go back to the previous track
+    If no previous track is available, play music from the current artist
     
     Returns:
         bool: True if operation was successful, False otherwise
@@ -223,9 +250,32 @@ def previous_track():
             wait("high")
             return True
         else:
-            logger.warning("No previous track available")
-            print("No previous track available in history")
-            return False
+            # No previous track available, so play the current artist
+            logger.info("No previous track available, playing music from current artist")
+            print("No previous track available. Playing more from the current artist...")
+            
+            # Get the current track information
+            success, track_info = get_current_track()
+            if not success or not track_info:
+                logger.warning("Could not get current track information")
+                print("Could not get current track information")
+                return False
+            
+            # Get the current artist's name
+            current_artist = track_info['artist']
+            logger.info(f"Current artist: {current_artist}, playing their music")
+            print(f"Playing more music from {current_artist}...")
+            
+            # Play more music from the same artist
+            play_success = play_artist_by_name(current_artist)
+            
+            if play_success:
+                logger.info(f"Successfully started playing more music from {current_artist}")
+                return True
+            else:
+                logger.warning(f"Could not play more music from {current_artist}")
+                print(f"Could not find more music from {current_artist}")
+                return False
     except spotipy.exceptions.SpotifyException as e:
         logger.error(f"Spotify API error going to previous track: {e}")
         print(f"Spotify error: {e}")

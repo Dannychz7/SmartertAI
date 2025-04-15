@@ -171,6 +171,13 @@ def main():
     try:
         print("Starting voice assistant...")
         
+        # Just some test cases without capturing audio
+        # SpotifyCommandHandler.handle_command("Play Die for You")
+        # time.sleep(5)
+        # SpotifyCommandHandler.handle_command("Next")
+        # time.sleep(5)
+        # SpotifyCommandHandler.handle_command("Previous")
+        
         # Start background threads
         listener_thread = threading.Thread(target=background_listener, daemon=True)
         listener_thread.start()
