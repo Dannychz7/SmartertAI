@@ -108,14 +108,35 @@ class CommandProcessor:
 
             response = ollama.chat(model="llama3.2", messages=[
                 {"role": "system", "content": (
-                    "Convert user requests into JSON. Example:\n"
-                    "open youtube -> { \"action\": \"open_website\", \"url\": \"https://youtube.com\" }\n"
-                    "search for dogs -> { \"action\": \"search_google\", \"query\": \"dogs\" }\n"
-                    "weather in New York -> { \"action\": \"get_weather\", \"location\": \"New York\" }\n"
-                    "Do not give any extra text or reasoning, or anything, just JSON"
+                    "You are an assistant that converts user commands into JSON for system execution.\n"
+                    "Respond ONLY with a JSON object. Use the following format:\n\n"
+                    "{\n"
+                    "  \"intent\": \"string\",         # general intent (e.g. open_website, get_weather)\n"
+                    "  \"action\": \"string\",         # specific action the system can run\n"
+                    "  \"parameters\": {              # any relevant parameters for the action\n"
+                    "    ...                         # key-value pairs like \"url\", \"query\", etc.\n"
+                    "  }\n"
+                    "}\n\n"
+                    "Supported intents and actions:\n"
+                    "- open_website → navigate → { \"url\": \"https://example.com\" }\n"
+                    "- search → search_google → { \"query\": \"dogs\" }\n"
+                    "- get_weather → fetch_weather → { \"location\": \"New York\" }\n"
+                    "- get_news → fetch_news → { \"topic\": \"technology\" } (optional)\n"
+                    "- play_music → play_song → { \"song\": \"Bohemian Rhapsody\" } (optional: \"artist\")\n"
+                    "- launch_app → open_application → { \"app_name\": \"calculator\" }\n"
+                    "- send_message → send_text → { \"recipient\": \"John\", \"message\": \"Hi there!\" }\n\n"
+                    "Examples:\n"
+                    "- open youtube -> { \"intent\": \"open_website\", \"action\": \"navigate\", \"parameters\": { \"url\": \"https://youtube.com\" } }\n"
+                    "- search for dogs -> { \"intent\": \"search\", \"action\": \"search_google\", \"parameters\": { \"query\": \"dogs\" } }\n"
+                    "- weather in Paris -> { \"intent\": \"get_weather\", \"action\": \"fetch_weather\", \"parameters\": { \"location\": \"Paris\" } }\n"
+                    "- play despacito -> { \"intent\": \"play_music\", \"action\": \"play_song\", \"parameters\": { \"song\": \"Despacito\" } }\n"
+                    "- open spotify -> { \"intent\": \"launch_app\", \"action\": \"open_application\", \"parameters\": { \"app_name\": \"spotify\" } }\n"
+                    "- message John saying hi -> { \"intent\": \"send_message\", \"action\": \"send_text\", \"parameters\": { \"recipient\": \"John\", \"message\": \"hi\" } }\n\n"
+                    "Do NOT provide any reasoning, do NOT explain. Just output the JSON object."
                 )},
                 {"role": "user", "content": text}
             ])
+
 
             stop_event.set()
             spinner_thread.join()
@@ -129,23 +150,24 @@ class CommandProcessor:
 
     @staticmethod
     def _execute_command(cmd):
-        if not cmd or 'action' not in cmd:
-            print("⚠️ Invalid or missing action.")
+        if not cmd or 'action' not in cmd or 'parameters' not in cmd:
+            print("⚠️ Invalid or missing action or parameters.")
             return
 
         action = cmd['action']
+        params = cmd['parameters']
 
-        if action == "open_website" and "url" in cmd:
-            webbrowser.open(cmd["url"])
-            print(f"🌐 Opening {cmd['url']}")
+        if action == "navigate" and "url" in params:
+            webbrowser.open(params["url"])
+            print(f"🌐 Opening {params['url']}")
 
-        elif action == "search_google" and "query" in cmd:
-            query = cmd["query"]
+        elif action == "search_google" and "query" in params:
+            query = params["query"]
             webbrowser.open(f"https://www.google.com/search?q={query}")
             print(f"🔍 Searching Google: {query}")
 
-        elif action == "get_weather" and "location" in cmd:
-            location = cmd["location"]
+        elif action == "fetch_weather" and "location" in params:
+            location = params["location"]
             url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={WEATHER_API_KEY}&units=metric"
             try:
                 res = requests.get(url)
@@ -158,9 +180,33 @@ class CommandProcessor:
                     print(f"❌ Weather error: {data.get('message', 'Unknown error')}")
             except Exception as e:
                 print("❌ Weather fetch failed:", str(e))
+
+        elif action == "fetch_news":
+            topic = params.get("topic", "world")
+            webbrowser.open(f"https://news.google.com/search?q={topic}")
+            print(f"🗞️ Opening news for topic: {topic}")
+
+        elif action == "play_song" and "song" in params:
+            song = params["song"]
+            artist = params.get("artist", "")
+            query = f"{song} {artist}".strip()
+            webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
+            print(f"🎵 Playing song: {query}")
+
+        elif action == "open_application" and "app_name" in params:
+            import subprocess
+            try:
+                subprocess.Popen(params["app_name"])  # for Windows you may want to add `.exe`
+                print(f"📂 Launching application: {params['app_name']}")
+            except Exception as e:
+                print(f"❌ Failed to launch application: {e}")
+
+        elif action == "send_text" and "recipient" in params and "message" in params:
+            print(f"📩 Sending message to {params['recipient']}: {params['message']}")
+            # Stub for sending a message — integrate messaging API here if desired
+
         else:
             print("🤖 Unknown action or missing data.")
-
 
 if __name__ == "__main__":
     print("🧠 Type a command (or 'exit'):")
@@ -171,4 +217,5 @@ if __name__ == "__main__":
             break
 
         command = CommandProcessor._chat_with_llm(user_input)
+        logger.debug(f"Debug command output: {command}")
         CommandProcessor._execute_command(command)
